@@ -8,18 +8,23 @@
         body, html {
             margin: 0;
             padding: 0;
-            height: 100%;
-            overflow: hidden; /* Prevent scrolling on the main page */
+            min-height: 100%;
+            overflow: auto; /* Allow scrolling on the main page */
         }
         iframe {
             width: 100%;
-            height: 50vh; /* Set the height to 50% of the viewport height */
             border: none;
+        }
+        iframe#iframe1 {
+            height: 1000px; /* Custom height for the first iframe */
+        }
+        iframe#iframe2 {
+            height: 800px; /* Custom height for the second iframe */
         }
     </style>
 </head>
 <body>
-    <iframe src="https://beepzilla.github.io/flickeringneon/" title="Iframe 1"></iframe>
-    <iframe src="https://beepzilla.github.io/cards/" title="Iframe 2"></iframe>
+    <iframe id="iframe1" src="https://beepzilla.github.io/flickeringneon/" title="Iframe 1"></iframe>
+    <iframe id="iframe2" src="https://beepzilla.github.io/cards/" title="Iframe 2"></iframe>
 </body>
 </html>
