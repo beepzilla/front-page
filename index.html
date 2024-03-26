@@ -8,18 +8,21 @@
         body, html {
             margin: 0;
             padding: 0;
-            min-height: 100%;
-            overflow: auto; /* Allow scrolling on the main page */
+            height: 100%;
+            overflow: hidden; /* Prevent scrolling on the main page */
         }
         iframe {
             width: 100%;
             border: none;
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            display: block; /* Prevents any gap below the iframe */
         }
         iframe#iframe1 {
-            height: 1000px; /* Custom height for the first iframe */
+            height: 50%; /* Adjusted height to split the page */
         }
         iframe#iframe2 {
-            height: 1000px; /* Custom height for the second iframe */
+            height: 50%; /* Adjusted height to split the page */
         }
     </style>
 </head>
