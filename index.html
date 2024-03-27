@@ -9,29 +9,29 @@
             margin: 0;
             padding: 0;
             min-height: 100%;
-            overflow: auto; /* Allow scrolling on the main page */
+            overflow: auto;
         }
         iframe {
             width: 100%;
             border: none;
-            display: block; /* Ensure the iframe takes up full width */
+            display: block;
         }
         iframe#iframe1 {
-            height: 1000px; /* Custom height for the first iframe */
+            height: 1000px;
         }
         iframe#iframe2 {
-            height: 900px; /* Custom height for the second iframe */
+            height: 900px;
         }
         iframe#iframe3 {
-            height: 800px; /* Custom height for the third iframe */
+            height: 800px;
         }
-        iframe#iframe4 {
-            height: 500px; /* Custom height for the fourth iframe */
+        iframe#iframe4, iframe#iframe5 {
+            height: 660px;
         }
-        iframe#iframe5 {
-            height: 300px; /* Custom height for the fifth iframe */
+        .iframe-container {
+            display: flex; /* Use flexbox to align iframes side by side */
+            width: 100%;
         }
-        /* Pop-up styles */
         .popup-overlay {
             position: fixed;
             top: 0;
@@ -74,10 +74,11 @@
     </div>
     <iframe id="iframe1" src="https://beepzilla.github.io/flickeringneon/" title="Iframe 1"></iframe>
     <iframe id="iframe2" src="https://beepzilla.github.io/cards/" title="Iframe 2"></iframe>
-    <iframe id="iframe5" src="https://beepzilla.github.io/opvwbanner/" title="Iframe 4"></iframe>
     <iframe id="iframe3" src="https://beepzilla.github.io/tokenomics/" title="Iframe 3"></iframe>
-    <iframe id="iframe4" src="https://beepzilla.github.io/Roadmap/" title="Iframe 4"></iframe>
-
+    <div class="iframe-container">
+        <iframe id="iframe4" src="https://app.uniswap.org/swap" title="Iframe 4"></iframe>
+        <iframe id="iframe5" src="https://www.tradingview.com/chart/foXUHhBk/?symbol=BINANCE%3ABTCUSDT" title="Iframe 5"></iframe>
+    </div>
     <script>
         function closePopup() {
             document.getElementById("popupOverlay").style.display = "none";
