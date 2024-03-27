@@ -28,8 +28,8 @@
         }
         .iframe-container {
             display: flex; /* Use flexbox to align iframes side by side */
-            width: 100%;
         }
+        .iframe-container iframe,
         .tradingview-widget-container {
             flex: 1; /* Take up half the width */
             height: 660px;
@@ -79,7 +79,7 @@
     <iframe id="iframe3" src="https://beepzilla.github.io/tokenomics/" title="Iframe 3"></iframe>
     <div class="iframe-container">
         <iframe id="iframe4" src="https://app.uniswap.org/swap" title="Iframe 4"></iframe>
-        <div class="tradingview-widget-container" id="tradingview_chart"></div> <!-- TradingView Widget Container -->
+        <div class="tradingview-widget-container"></div> <!-- TradingView Widget Container -->
     </div>
     <script>
         function closePopup() {
