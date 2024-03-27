@@ -5,12 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Odd Pepes</title>
     <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script> <!-- TradingView Widget Library -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> <!-- Google Font: Press Start 2P -->
     <style>
         body, html {
             margin: 0;
             padding: 0;
             min-height: 100%;
             overflow: auto;
+            font-family: 'Press Start 2P', cursive;
+        }
+        .title {
+            text-align: center;
+            color: #00ff00;
+            font-size: 24px;
         }
         iframe {
             width: 100%;
@@ -27,12 +34,22 @@
             height: 400px;
         }
         .iframe-container {
-            display: flex; /* Use flexbox to align iframes side by side */
+            display: flex;
+            flex-wrap: wrap; /* Wrap iframes to next line on smaller screens */
+            justify-content: space-around; /* Space around iframes */
+            gap: 20px; /* Space between iframes */
         }
         .iframe-container iframe,
         .tradingview-widget-container {
-            flex: 1; /* Take up half the width */
+            flex-basis: calc(50% - 10px); /* Half width minus half of gap */
+            max-width: 300px; /* Mobile size width */
             height: 660px;
+        }
+        @media screen and (max-width: 600px) {
+            .iframe-container {
+                flex-direction: column; /* Stack iframes vertically on small screens */
+                align-items: center; /* Center iframes */
+            }
         }
         .popup-overlay {
             position: fixed;
@@ -77,6 +94,7 @@
     <iframe id="iframe1" src="https://beepzilla.github.io/flickeringneon/" title="Iframe 1"></iframe>
     <iframe id="iframe2" src="https://beepzilla.github.io/cards/" title="Iframe 2"></iframe>
     <iframe id="iframe3" src="https://beepzilla.github.io/tokenomics/" title="Iframe 3"></iframe>
+    <h2 class="title">Buy $KEKEL</h2>
     <div class="iframe-container">
         <iframe id="iframe4" src="https://app.uniswap.org/swap" title="Iframe 4"></iframe>
         <div class="tradingview-widget-container" id="tradingview_chart"></div> <!-- TradingView Widget Container -->
@@ -92,20 +110,21 @@
             "symbol": "BINANCE:BTCUSDT",
             "interval": "60",
             "timezone": "Etc/UTC",
-            "theme": "dark", // Change to dark theme
+            "theme": "dark",
             "style": "1",
             "locale": "en",
             "toolbar_bg": "#f1f3f6",
             "enable_publishing": false,
             "allow_symbol_change": true,
             "details": true,
-            "withdateranges": true, // Show date ranges
-            "hide_side_toolbar": false, // Show side toolbar
+            "withdateranges": true,
+            "hide_side_toolbar": false,
             "studies": [
-                "MACD@tv-basicstudies", // Example: Adding MACD indicator for a neon-like effect
+                "MACD@tv-basicstudies",
                 "RSI@tv-basicstudies"
             ]
         });
     </script>
 </body>
 </html>
+
