@@ -92,13 +92,19 @@
             "symbol": "BINANCE:BTCUSDT",
             "interval": "60",
             "timezone": "Etc/UTC",
-            "theme": "light",
+            "theme": "dark", // Change to dark theme
             "style": "1",
             "locale": "en",
             "toolbar_bg": "#f1f3f6",
             "enable_publishing": false,
             "allow_symbol_change": true,
-            "details": true
+            "details": true,
+            "withdateranges": true, // Show date ranges
+            "hide_side_toolbar": false, // Show side toolbar
+            "studies": [
+                "MACD@tv-basicstudies", // Example: Adding MACD indicator for a neon-like effect
+                "RSI@tv-basicstudies"
+            ]
         });
     </script>
 </body>
