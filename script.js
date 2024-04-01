@@ -62,6 +62,7 @@ const songs = [
 
 playBtn.addEventListener('click', () => {
     if (!isPlaying) {
+        audioPlayer.src = songs[currentSongIndex];
         audioPlayer.play();
         isPlaying = true;
         playBtn.style.display = 'none';
@@ -80,8 +81,7 @@ pauseBtn.addEventListener('click', () => {
 
 nextBtn.addEventListener('click', () => {
     currentSongIndex = (currentSongIndex + 1) % songs.length;
-    audioSource.src = songs[currentSongIndex];
-    audioPlayer.load();
+    audioPlayer.src = songs[currentSongIndex];
     audioPlayer.play();
     isPlaying = true;
     playBtn.style.display = 'none';
