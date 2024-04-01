@@ -153,15 +153,18 @@ iframe#iframe3 {
         margin: 5px 0;
     }
 
-    #nav-right {
-        margin-top: 10px;
-        padding: 0 5px;
-        padding-right: 50px; /* Increase padding to the right side */
-    }
+#nav-right {
+    display: flex;
+    align-items: center;
+    padding-right: 30px; /* Add padding to the right */
+}
 
-    .nav-icon {
-        margin: 0 10px;
-    }
+.nav-icon img {
+    height: 25px; /* Reduce the size of the icons */
+    width: 25px; /* Reduce the size of the icons */
+    padding: 5px;
+}
+
 }
 
 
