@@ -37,15 +37,35 @@ function openTab(evt, tabName) {
     evt.currentTarget.className += " active";
 }
 
-// Set the default tab to be displayed
-document.getElementsByClassName("tab-link")[0].click();
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        const offset = 400; // Adjust this value as needed
+        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
+
+        // Set the home tab as active
+        document.querySelector('.tab-link.active').classList.remove('active');
+        document.querySelector('.tab-link[href="#home"]').classList.add('active');
+
+        // Display the home tab content
+        document.querySelector('.tab-content:not([style="display: none;"])').style.display = 'none';
+        document.getElementById('home').style.display = 'block';
+
+        // Scroll to the target position
+        window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+        });
+    });
+});
 
 // Radio controls
 const audioPlayer = document.getElementById('audio-player');
 const playBtn = document.getElementById('play-btn');
 const pauseBtn = document.getElementById('pause-btn');
 const nextBtn = document.getElementById('next-btn');
-const audioSource = document.getElementById('audio-source');
 
 let isPlaying = false;
 let currentSongIndex = 0;
