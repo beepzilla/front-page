@@ -52,7 +52,6 @@ iframe#iframe3 {
     }
 }
 
-
 .popup-overlay {
     position: fixed;
     top: 0;
@@ -157,12 +156,10 @@ iframe#iframe3 {
     #nav-right {
         margin-top: 10px;
         padding: 0 5px;
-        padding-right: 80px; /* Add this line */
     }
 
     .nav-icon {
         margin: 0 10px;
-        padding-right: 30px;
     }
 }
 
@@ -192,4 +189,3 @@ footer {
 .main-content {
     padding-top: 70px; /* Adjust this value based on the height of your navbar */
 }
-
