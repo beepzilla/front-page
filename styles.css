@@ -68,14 +68,14 @@ iframe#iframe3 {
 .popup-window {
     background-color: #c0c0c0;
     border: 2px solid #000;
-    padding: 20px;
+    padding: 40px;
     font-family: 'Arial', sans-serif;
     box-shadow: 5px 5px 0 #000;
 }
 
 .popup-title {
-    font-size: 18px;
-    margin: 0 0 10px 0;
+    font-size: 30px;
+    margin: 0 0 30px 0;
 }
 
 .popup-button {
@@ -84,7 +84,7 @@ iframe#iframe3 {
     border: none;
     padding: 5px 10px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 20px;
 }
 
 #navbar {
@@ -119,11 +119,11 @@ iframe#iframe3 {
 }
 
 .nav-link:hover, .tab-link.active {
-    text-shadow: 0 0 20px #0000ff;
+    text-shadow: 0 0 20px #00ff00;
 }
 
 .tab-link:hover {
-    text-shadow: 0 0 20px #0000ff;
+    text-shadow: 0 0 20px #00ff00;
 }
 
 .nav-icon img {
