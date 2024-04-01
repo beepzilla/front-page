@@ -153,17 +153,17 @@ iframe#iframe3 {
         margin: 5px 0;
     }
 
-#nav-right {
-    display: flex;
-    align-items: center;
-    padding-right: 30px; /* Add padding to the right */
-}
-
-.nav-icon img {
-    height: 25px; /* Reduce the size of the icons */
-    width: 25px; /* Reduce the size of the icons */
-    padding: 5px;
-}
+    #nav-right {
+        display: flex;
+        align-items: center;
+        padding-right: 30px; /* Add padding to the right */
+    }
+    
+    .nav-icon img {
+        height: 25px; /* Reduce the size of the icons */
+        width: 25px; /* Reduce the size of the icons */
+        padding: 5px;
+    }
 
 }
 
