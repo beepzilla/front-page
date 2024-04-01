@@ -46,15 +46,17 @@
           width: 60px;
         }
 
-        .nav-link {
+        .nav-link, .tab-link {
           color: #00ff00;
           text-decoration: none;
           text-shadow: 0 0 20px #00ff00;
           transition: text-shadow 0.3s ease;
           margin: 0 10px;
+          padding: 10px;
+          cursor: pointer;
         }
 
-        .nav-link:hover {
+        .nav-link:hover, .tab-link.active {
           text-shadow: 0 0 20px #0000ff;
         }
 
@@ -112,8 +114,20 @@
           margin-right: 10px;
         }
 
-        /* New CSS for mobile responsiveness */
-        @media (max-width: 768px) {
+        .tab-content {
+            display: none;
+            padding: 20px;
+            margin-top: 60px;
+        }
+
+        .iframe-container iframe,
+        .tradingview-widget-container {
+            flex-basis: calc(50% - 10px); /* Half width minus half of gap */
+            max-width: 600px; /* Mobile size width */
+            height: 660px;
+        }
+
+        @media screen and (max-width: 600px) {
           #navbar {
             flex-direction: column;
             padding: 15px;
@@ -124,69 +138,25 @@
             align-items: center;
           }
 
-          .nav-link {
+          .nav-link, .tab-link {
             margin: 10px 0;
-          }
-
-          #nav-right {
-            margin-top: 15px;
-          }
-
-          .nav-icon {
-            margin: 0 15px; /* Increase the space between icons */
           }
 
           #nav-right {
             margin-top: 15px;
             padding: 0 10px; /* Add padding to create space from the edges */
           }
-        }
 
-        body, html {
-            margin: 0;
-            padding: 0;
-            min-height: 100%;
-            overflow: auto;
-            font-family: 'Press Start 2P', cursive;
-            background-color: #150220;
-        }
-        .title {
-            text-align: center;
-            color: #00ff00;
-            font-size: 24px;
-        }
-        iframe {
-            width: 100%;
-            border: none;
-            display: block;
-        }
-        iframe#iframe1 {
-            height: 1000px;
-        }
-        iframe#iframe2 {
-            height: 900px;
-        }
-        iframe#iframe3 {
-            height: 500px;
-        }
-        .iframe-container {
-            display: flex;
-            flex-wrap: wrap; /* Wrap iframes to next line on smaller screens */
-            justify-content: space-around; /* Space around iframes */
-            gap: 20px; /* Space between iframes */
-        }
-        .iframe-container iframe,
-        .tradingview-widget-container {
-            flex-basis: calc(50% - 10px); /* Half width minus half of gap */
-            max-width: 600px; /* Mobile size width */
-            height: 660px;
-        }
-        @media screen and (max-width: 600px) {
-            .iframe-container {
+          .nav-icon {
+            margin: 0 15px; /* Increase the space between icons */
+          }
+
+          .iframe-container {
                 flex-direction: column; /* Stack iframes vertically on small screens */
                 align-items: center; /* Center iframes */
             }
         }
+
         .popup-overlay {
             position: fixed;
             top: 0;
@@ -221,7 +191,7 @@
     </style>
 </head>
 <body>
-    <nav id="navbar"> <!-- Start of Navbar -->
+    <nav id="navbar">
         <div id="nav-left">
             <img id="logo" src="https://ipfs.io/ipfs/QmPH4yHkTXu1jtn9i7damYZ6utchQAoCJj5Vkh8hMFhug3/OIG1.ThboOSynp9-removebg-preview.png" alt="Logo">
             <div id="radio-controls">
@@ -229,32 +199,62 @@
                 <img id="pause-btn" src="https://ipfs.io/ipfs/QmPGj77da8EWd1UBS7FBQwnWHctQVEejHDsHxLdSRLTBzS/360_F_328807197_ZbIU1ugaf36klDytjxL3THxKKhFfWkjw-removebg-preview.png" alt="Pause" style="display: none;">
                 <img id="next-btn" src="https://ipfs.io/ipfs/QmSJayCAtVz794zQfs48FsFT2jh5wAMs1yMHedoXzXAk51/7191571.png" alt="Next">
             </div>
-            <a href="#" class="nav-link">About</a>
-            <a href="#" class="nav-link">Tokenomics</a>
-            <a href="#" class="nav-link">Roadmap</a>
-            <a href="#" class="nav-link">PackShack</a>
-            <a href="#" class="nav-link">LitePaper(Docs)</a>
+            <a href="#" class="tab-link" onclick="openTab(event, 'about')">About</a>
+            <a href="#" class="tab-link" onclick="openTab(event, 'tokenomics')">Tokenomics</a>
+            <a href="#" class="tab-link" onclick="openTab(event, 'roadmap')">Roadmap</a>
+            <a href="#" class="tab-link" onclick="openTab(event, 'packshack')">PackShack</a>
+            <a href="#" class="tab-link" onclick="openTab(event, 'litepaper')">LitePaper (Docs)</a>
         </div>
         <div id="nav-right">
             <a href="#" class="nav-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_of_Twitter.svg/640px-Logo_of_Twitter.svg.png" alt="Twitter"></a>
             <a href="#" class="nav-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg" alt="Telegram"></a>
             <a href="#" class="nav-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Medium_logo_Monogram.svg" alt="Medium"></a>
         </div>
-    </nav> <!-- End of Navbar -->
+    </nav>
+
+    <div class="tab-content" id="about" style="display: none;">
+        <!-- Placeholder content for the About tab -->
+        <h2>About</h2>
+        <p>This is a placeholder for the About content.</p>
+    </div>
+    <div class="tab-content" id="tokenomics" style="display: none;">
+        <!-- Placeholder content for the Tokenomics tab -->
+        <h2>Tokenomics</h2>
+        <p>This is a placeholder for the Tokenomics content.</p>
+    </div>
+    <div class="tab-content" id="roadmap" style="display: none;">
+        <!-- Placeholder content for the Roadmap tab -->
+        <h2>Roadmap</h2>
+        <p>This is a placeholder for the Roadmap content.</p>
+    </div>
+    <div class="tab-content" id="packshack" style="display: none;">
+        <!-- Placeholder content for the PackShack tab -->
+        <h2>PackShack</h2>
+        <p>This is a placeholder for the PackShack content.</p>
+    </div>
+    <div class="tab-content" id="litepaper" style="display: none;">
+        <!-- Placeholder content for the LitePaper (Docs) tab -->
+        <h2>LitePaper (Docs)</h2>
+        <p>This is a placeholder for the LitePaper (Docs) content.</p>
+    </div>
+
     <div class="popup-overlay" id="popupOverlay">
         <div class="popup-window">
             <p class="popup-title">I love Pepe</p>
             <button class="popup-button" onclick="closePopup()">Yes</button>
         </div>
     </div>
-    <iframe id="iframe1" src="https://beepzilla.github.io/flickeringneon/" title="Iframe 1"></iframe>
-    <iframe id="iframe2" src="https://beepzilla.github.io/cards/" title="Iframe 2"></iframe>
-    <iframe id="iframe3" src="https://beepzilla.github.io/tokenomics/" title="Iframe 3"></iframe>
+
+    <!-- Existing iframes -->
+    <iframe src="https://beepzilla.github.io/flickeringneon/" title="Iframe 1"></iframe>
+    <iframe src="https://beepzilla.github.io/cards/" title="Iframe 2"></iframe>
+    <iframe src="https://beepzilla.github.io/tokenomics/" title="Iframe 3"></iframe>
     <h2 class="title">Buy $KEKEL</h2>
     <div class="iframe-container">
-        <iframe id="iframe4" src="https://app.uniswap.org/swap" title="Iframe 4"></iframe>
-        <div class="tradingview-widget-container" id="tradingview_chart"></div> <!-- TradingView Widget Container -->
+        <iframe src="https://app.uniswap.org/swap" title="Iframe 4"></iframe>
+        <div class="tradingview-widget-container" id="tradingview_chart"></div>
     </div>
+
     <script>
         const audioPlayer = document.getElementById('audio-player');
         const playBtn = document.getElementById('play-btn');
@@ -330,6 +330,23 @@
                 "RSI@tv-basicstudies"
             ]
         });
+
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tab-link");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Set the default tab to be displayed
+        document.getElementsByClassName("tab-link")[0].click();
     </script>
 </body>
 </html>
