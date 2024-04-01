@@ -42,7 +42,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
         e.preventDefault();
         const targetId = link.getAttribute('href').substring(1);
         const targetElement = document.getElementById(targetId);
-        const offset = 400; // Adjust this value as needed
+        const offset = 200; // Adjust this value as needed
 
         // Trigger click on the home tab link
         document.querySelector('.tab-link[href="#home"]').click();
