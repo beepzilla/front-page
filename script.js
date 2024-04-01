@@ -43,21 +43,20 @@ document.querySelectorAll('.nav-link').forEach(link => {
         const targetId = link.getAttribute('href').substring(1);
         const targetElement = document.getElementById(targetId);
         const offset = 400; // Adjust this value as needed
-        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
 
-        // Set the home tab as active
-        document.querySelector('.tab-link.active').classList.remove('active');
-        document.querySelector('.tab-link[href="#home"]').classList.add('active');
+        // Trigger click on the home tab link
+        document.querySelector('.tab-link[href="#home"]').click();
 
-        // Display the home tab content
-        document.querySelector('.tab-content:not([style="display: none;"])').style.display = 'none';
-        document.getElementById('home').style.display = 'block';
+        // Wait for the home tab content to be displayed
+        setTimeout(() => {
+            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
 
-        // Scroll to the target position
-        window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-        });
+            // Scroll to the target position
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }, 100); // Adjust this timeout as needed
     });
 });
 
