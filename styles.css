@@ -122,6 +122,10 @@ iframe#iframe3 {
     text-shadow: 0 0 20px #0000ff;
 }
 
+.tab-link:hover {
+    text-shadow: 0 0 20px #0000ff;
+}
+
 .nav-icon img {
     height: 30px;
     width: 30px;
