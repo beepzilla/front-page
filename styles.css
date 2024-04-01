@@ -6,43 +6,52 @@ body, html {
     font-family: 'Press Start 2P', cursive;
     background-color: #150220;
 }
+
 .title {
     text-align: center;
     color: #00ff00;
     font-size: 24px;
 }
+
 iframe {
     width: 100%;
     border: none;
     display: block;
 }
+
 iframe#iframe1 {
     height: 1000px;
 }
+
 iframe#iframe2 {
     height: 900px;
 }
+
 iframe#iframe3 {
     height: 500px;
 }
+
 .iframe-container {
     display: flex;
-    flex-wrap: wrap; /* Wrap iframes to next line on smaller screens */
-    justify-content: space-around; /* Space around iframes */
-    gap: 20px; /* Space between iframes */
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
 }
+
 .iframe-container iframe,
 .tradingview-widget-container {
-    flex-basis: calc(50% - 10px); /* Half width minus half of gap */
-    max-width: 600px; /* Mobile size width */
+    flex-basis: calc(50% - 10px);
+    max-width: 600px;
     height: 660px;
 }
+
 @media screen and (max-width: 600px) {
     .iframe-container {
-        flex-direction: column; /* Stack iframes vertically on small screens */
-        align-items: center; /* Center iframes */
+        flex-direction: column;
+        align-items: center;
     }
 }
+
 .popup-overlay {
     position: fixed;
     top: 0;
@@ -55,6 +64,7 @@ iframe#iframe3 {
     align-items: center;
     z-index: 9999;
 }
+
 .popup-window {
     background-color: #c0c0c0;
     border: 2px solid #000;
@@ -62,10 +72,12 @@ iframe#iframe3 {
     font-family: 'Arial', sans-serif;
     box-shadow: 5px 5px 0 #000;
 }
+
 .popup-title {
     font-size: 18px;
     margin: 0 0 10px 0;
 }
+
 .popup-button {
     background-color: #000;
     color: #fff;
@@ -73,4 +85,70 @@ iframe#iframe3 {
     padding: 5px 10px;
     cursor: pointer;
     font-size: 14px;
+}
+
+#navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    background: #150220;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+#nav-left, #nav-right {
+    display: flex;
+    align-items: center;
+}
+
+#logo {
+    height: 60px;
+    width: 60px;
+}
+
+.nav-link, .tab-link {
+    color: #00ff00;
+    text-decoration: none;
+    text-shadow: 0 0 20px #00ff00;
+    transition: text-shadow 0.3s ease;
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+.nav-link:hover, .tab-link.active {
+    text-shadow: 0 0 20px #0000ff;
+}
+
+.nav-icon img {
+    height: 30px;
+    width: 30px;
+    padding: 5px;
+}
+
+@media (max-width: 768px) {
+    #navbar {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    #nav-left {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-link, .tab-link {
+        margin: 5px 0;
+    }
+
+    #nav-right {
+        margin-top: 10px;
+        padding: 0 5px;
+    }
+
+    .nav-icon {
+        margin: 0 10px;
+    }
 }
