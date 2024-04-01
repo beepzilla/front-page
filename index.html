@@ -6,189 +6,7 @@
     <title>Odd Pepes</title>
     <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script> <!-- TradingView Widget Library -->
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> <!-- Google Font: Press Start 2P -->
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
-        * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-        }
-
-        body {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          min-height: 100vh;
-          background: #150220;
-          font-family: 'Press Start 2P', cursive;
-        }
-
-        #navbar {
-          width: 100%;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 0 30px;
-          background: #150220;
-          position: fixed;
-          top: 0;
-          z-index: 1;
-        }
-
-        #nav-left, #nav-right {
-          display: flex;
-          align-items: center;
-        }
-
-        #logo {
-          height: 60px;
-          width: 60px;
-        }
-
-        .nav-link, .tab-link {
-          color: #00ff00;
-          text-decoration: none;
-          text-shadow: 0 0 20px #00ff00;
-          transition: text-shadow 0.3s ease;
-          margin: 0 10px;
-          padding: 10px;
-          cursor: pointer;
-        }
-
-        .nav-link:hover, .tab-link.active {
-          text-shadow: 0 0 20px #0000ff;
-        }
-
-        .nav-icon img {
-          height: 45px;
-          width: 45px;
-          padding: 8px; /* Add padding to create space between icons */
-        }
-
-        #text {
-          font-size: 3.2rem;
-          letter-spacing: 3px;
-          color: #00ff00;
-          border: 3px solid rgba(22, 182, 212, 0.3);
-          padding: 15px;
-          width: 680px;
-          height: 180px;
-          margin-top: 150px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          cursor: pointer;
-          transition: text-shadow 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
-          z-index: 2;
-        }
-
-        #image-container {
-          width: 480px;
-          height: 480px;
-          border-radius: 10px;
-          overflow: hidden;
-          position: relative;
-          margin-top: 30px;
-          cursor: pointer;
-          transition: box-shadow 0.3s ease;
-        }
-
-        #image {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          transition: filter 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        #radio-controls {
-          display: flex;
-          align-items: center;
-          margin-left: 10px;
-        }
-
-        #play-btn, #pause-btn, #next-btn {
-          height: 40px;
-          width: 40px;
-          cursor: pointer;
-          margin-right: 10px;
-        }
-
-        .tab-content {
-            display: none;
-            padding: 20px;
-            margin-top: 60px;
-        }
-
-        .iframe-container iframe,
-        .tradingview-widget-container {
-            flex-basis: calc(50% - 10px); /* Half width minus half of gap */
-            max-width: 600px; /* Mobile size width */
-            height: 660px;
-        }
-
-        @media screen and (max-width: 600px) {
-          #navbar {
-            flex-direction: column;
-            padding: 15px;
-          }
-
-          #nav-left {
-            flex-direction: column;
-            align-items: center;
-          }
-
-          .nav-link, .tab-link {
-            margin: 10px 0;
-          }
-
-          #nav-right {
-            margin-top: 15px;
-            padding: 0 10px; /* Add padding to create space from the edges */
-          }
-
-          .nav-icon {
-            margin: 0 15px; /* Increase the space between icons */
-          }
-
-          .iframe-container {
-                flex-direction: column; /* Stack iframes vertically on small screens */
-                align-items: center; /* Center iframes */
-            }
-        }
-
-        .popup-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-        }
-        .popup-window {
-            background-color: #c0c0c0;
-            border: 2px solid #000;
-            padding: 20px;
-            font-family: 'Arial', sans-serif;
-            box-shadow: 5px 5px 0 #000;
-        }
-        .popup-title {
-            font-size: 18px;
-            margin: 0 0 10px 0;
-        }
-        .popup-button {
-            background-color: #000;
-            color: #fff;
-            border: none;
-            padding: 5px 10px;
-            cursor: pointer;
-            font-size: 14px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the external CSS file -->
 </head>
 <body>
     <nav id="navbar">
@@ -199,6 +17,7 @@
                 <img id="pause-btn" src="https://ipfs.io/ipfs/QmPGj77da8EWd1UBS7FBQwnWHctQVEejHDsHxLdSRLTBzS/360_F_328807197_ZbIU1ugaf36klDytjxL3THxKKhFfWkjw-removebg-preview.png" alt="Pause" style="display: none;">
                 <img id="next-btn" src="https://ipfs.io/ipfs/QmSJayCAtVz794zQfs48FsFT2jh5wAMs1yMHedoXzXAk51/7191571.png" alt="Next">
             </div>
+            <a href="#" class="tab-link" onclick="openTab(event, 'home')">Home</a>
             <a href="#" class="tab-link" onclick="openTab(event, 'about')">About</a>
             <a href="#" class="tab-link" onclick="openTab(event, 'tokenomics')">Tokenomics</a>
             <a href="#" class="tab-link" onclick="openTab(event, 'roadmap')">Roadmap</a>
@@ -212,6 +31,22 @@
         </div>
     </nav>
 
+    <div class="tab-content" id="home">
+        <div class="popup-overlay" id="popupOverlay">
+            <div class="popup-window">
+                <p class="popup-title">I love Pepe</p>
+                <button class="popup-button" onclick="closePopup()">Yes</button>
+            </div>
+        </div>
+        <iframe id="iframe1" src="https://beepzilla.github.io/flickeringneon/" title="Iframe 1"></iframe>
+        <iframe id="iframe2" src="https://beepzilla.github.io/cards/" title="Iframe 2"></iframe>
+        <iframe id="iframe3" src="https://beepzilla.github.io/tokenomics/" title="Iframe 3"></iframe>
+        <h2 class="title">Buy $KEKEL</h2>
+        <div class="iframe-container">
+            <iframe id="iframe4" src="https://app.uniswap.org/swap" title="Iframe 4"></iframe>
+            <div class="tradingview-widget-container" id="tradingview_chart"></div>
+        </div>
+    </div>
     <div class="tab-content" id="about" style="display: none;">
         <!-- Placeholder content for the About tab -->
         <h2>About</h2>
@@ -238,115 +73,6 @@
         <p>This is a placeholder for the LitePaper (Docs) content.</p>
     </div>
 
-    <div class="popup-overlay" id="popupOverlay">
-        <div class="popup-window">
-            <p class="popup-title">I love Pepe</p>
-            <button class="popup-button" onclick="closePopup()">Yes</button>
-        </div>
-    </div>
-
-    <!-- Existing iframes -->
-    <iframe src="https://beepzilla.github.io/flickeringneon/" title="Iframe 1"></iframe>
-    <iframe src="https://beepzilla.github.io/cards/" title="Iframe 2"></iframe>
-    <iframe src="https://beepzilla.github.io/tokenomics/" title="Iframe 3"></iframe>
-    <h2 class="title">Buy $KEKEL</h2>
-    <div class="iframe-container">
-        <iframe src="https://app.uniswap.org/swap" title="Iframe 4"></iframe>
-        <div class="tradingview-widget-container" id="tradingview_chart"></div>
-    </div>
-
-    <script>
-        const audioPlayer = document.getElementById('audio-player');
-        const playBtn = document.getElementById('play-btn');
-        const pauseBtn = document.getElementById('pause-btn');
-        const nextBtn = document.getElementById('next-btn');
-        const audioSource = document.getElementById('audio-source');
-
-        let isPlaying = false;
-        let currentSongIndex = 0;
-        const songs = [
-            'https://ipfs.io/ipfs/Qma4cKFvWvfqoKXpB3KCPhFsz2ySje5PSNywTBZff8eXT4/stellar-escape-prigida-main-version-25318-03-02%20(1).mp3',
-            'https://ipfs.io/ipfs/QmdcYArSqshxQ5LE6BgWgQQPnz7AWB4AFHXwsbBusqQXfk/game-over-danijel-zambo-main-version-02-03-1394.mp3',
-            'https://ipfs.io/ipfs/QmdcYArSqshxQ5LE6BgWgQQPnz7AWB4AFHXwsbBusqQXfk/sunset-in-junipero-bach-main-version-19643-03-22.mp3',
-            'https://ipfs.io/ipfs/QmdcYArSqshxQ5LE6BgWgQQPnz7AWB4AFHXwsbBusqQXfk/easy-arcade-hartzmann-main-version-28392-02-32.mp3',
-            'https://ipfs.io/ipfs/QmdcYArSqshxQ5LE6BgWgQQPnz7AWB4AFHXwsbBusqQXfk/milky-way-mountaineer-main-version-28369-02-20.mp3',
-            'https://ipfs.io/ipfs/QmdcYArSqshxQ5LE6BgWgQQPnz7AWB4AFHXwsbBusqQXfk/space-ranger-moire-main-version-03-04-10814.mp3',
-            'https://ipfs.io/ipfs/Qma4cKFvWvfqoKXpB3KCPhFsz2ySje5PSNywTBZff8eXT4/stardust-danijel-zambo-main-version-03-13-1372.mp3',
-            'https://ipfs.io/ipfs/QmdcYArSqshxQ5LE6BgWgQQPnz7AWB4AFHXwsbBusqQXfk/pencil-crayons-sulyya-main-version-27127-03-10.mp3'
-        ];
-
-        playBtn.addEventListener('click', () => {
-            if (!isPlaying) {
-                audioPlayer.play();
-            } else {
-                audioPlayer.pause();
-            }
-        });
-
-        nextBtn.addEventListener('click', () => {
-            currentSongIndex = (currentSongIndex + 1) % songs.length;
-            audioSource.src = songs[currentSongIndex];
-            audioPlayer.load();
-            audioPlayer.play();
-        });
-
-        audioPlayer.addEventListener('play', () => {
-            isPlaying = true;
-            playBtn.style.display = 'none';
-            pauseBtn.style.display = 'inline';
-        });
-
-        audioPlayer.addEventListener('pause', () => {
-            isPlaying = false;
-            playBtn.style.display = 'inline';
-            pauseBtn.style.display = 'none';
-        });
-
-        audioPlayer.addEventListener('ended', () => {
-            nextBtn.click();
-        });
-
-        function closePopup() {
-            document.getElementById("popupOverlay").style.display = "none";
-        }
-
-        new TradingView.widget({
-            "container_id": "tradingview_chart",
-            "autosize": true,
-            "symbol": "BINANCE:BTCUSDT",
-            "interval": "60",
-            "timezone": "Etc/UTC",
-            "theme": "dark",
-            "style": "1",
-            "locale": "en",
-            "toolbar_bg": "#f1f3f6",
-            "enable_publishing": false,
-            "allow_symbol_change": true,
-            "details": true,
-            "withdateranges": true,
-            "hide_side_toolbar": false,
-            "studies": [
-                "MACD@tv-basicstudies",
-                "RSI@tv-basicstudies"
-            ]
-        });
-
-        function openTab(evt, tabName) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tab-content");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-            tablinks = document.getElementsByClassName("tab-link");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-            document.getElementById(tabName).style.display = "block";
-            evt.currentTarget.className += " active";
-        }
-
-        // Set the default tab to be displayed
-        document.getElementsByClassName("tab-link")[0].click();
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
