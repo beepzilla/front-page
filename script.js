@@ -89,5 +89,7 @@ nextBtn.addEventListener('click', () => {
 });
 
 audioPlayer.addEventListener('ended', () => {
-    nextBtn.click();
+    currentSongIndex = (currentSongIndex + 1) % songs.length;
+    audioPlayer.src = songs[currentSongIndex];
+    audioPlayer.play();
 });
