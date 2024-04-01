@@ -186,3 +186,8 @@ footer {
     font-size: 24px;
     text-shadow: 0 0 20px #00ff00;
 }
+
+.main-content {
+    padding-top: 70px; /* Adjust this value based on the height of your navbar */
+}
+
