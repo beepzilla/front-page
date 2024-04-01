@@ -18,8 +18,8 @@
                 <img id="next-btn" src="https://ipfs.io/ipfs/QmSJayCAtVz794zQfs48FsFT2jh5wAMs1yMHedoXzXAk51/7191571.png" alt="Next">
             </div>
             <a href="#" class="tab-link" onclick="openTab(event, 'home')">Home</a>
-            <a href="#" class="tab-link" onclick="openTab(event, 'about')">About</a>
-            <a href="#" class="tab-link" onclick="openTab(event, 'tokenomics')">Tokenomics</a>
+            <a href="#iframe2" class="nav-link">About</a>
+            <a href="#iframe3" class="nav-link">Tokenomics</a>
             <a href="#" class="tab-link" onclick="openTab(event, 'roadmap')">Roadmap</a>
             <a href="#" class="tab-link" onclick="openTab(event, 'packshack')">PackShack</a>
             <a href="#" class="tab-link" onclick="openTab(event, 'litepaper')">LitePaper (Docs)</a>
@@ -27,7 +27,7 @@
         <div id="nav-right">
             <a href="#" class="nav-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_of_Twitter.svg/640px-Logo_of_Twitter.svg.png" alt="Twitter"></a>
             <a href="#" class="nav-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg" alt="Telegram"></a>
-            <a href="#" class="nav-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Medium_logo_Monogram.svg" alt="Medium"></a>
+            <a href="#" class="nav-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Medium_logo_Monogram.svg" alt="Medium" style="filter: invert(100%);"></a>
         </div>
     </nav>
 
@@ -47,30 +47,20 @@
             <div class="tradingview-widget-container" id="tradingview_chart"></div>
         </div>
     </div>
-    <div class="tab-content" id="about" style="display: none;">
-        <!-- Placeholder content for the About tab -->
-        <h2>About</h2>
-        <p>This is a placeholder for the About content.</p>
-    </div>
-    <div class="tab-content" id="tokenomics" style="display: none;">
-        <!-- Placeholder content for the Tokenomics tab -->
-        <h2>Tokenomics</h2>
-        <p>This is a placeholder for the Tokenomics content.</p>
-    </div>
     <div class="tab-content" id="roadmap" style="display: none;">
         <!-- Placeholder content for the Roadmap tab -->
         <h2>Roadmap</h2>
-        <p>This is a placeholder for the Roadmap content.</p>
+        <iframe src="YOUR_ROADMAP_IFRAME_URL" style="width: 100%; height: 100vh;"></iframe>
     </div>
     <div class="tab-content" id="packshack" style="display: none;">
         <!-- Placeholder content for the PackShack tab -->
         <h2>PackShack</h2>
-        <p>This is a placeholder for the PackShack content.</p>
+        <iframe src="https://bafybeidflk2yk6jpj7srln6b75cioyus6walugpz2napm2q2ikrwjxkzli.ipfs.cf-ipfs.com/" style="width: 100%; height: 100vh;"></iframe>
     </div>
     <div class="tab-content" id="litepaper" style="display: none;">
         <!-- Placeholder content for the LitePaper (Docs) tab -->
         <h2>LitePaper (Docs)</h2>
-        <p>This is a placeholder for the LitePaper (Docs) content.</p>
+        <iframe src="https://odd-pepes.gitbook.io/odd-pepes-ecosystem-docs/" style="width: 100%; height: 100vh;"></iframe>
     </div>
     <audio id="audio-player" style="display: none;">
         <source id="audio-source" src="https://ipfs.io/ipfs/Qma4cKFvWvfqoKXpB3KCPhFsz2ySje5PSNywTBZff8eXT4/stellar-escape-prigida-main-version-25318-03-02%20(1).mp3" type="audio/mpeg">
@@ -81,7 +71,7 @@
         <div class="social-icons">
             <a href="#" class="nav-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_of_Twitter.svg/640px-Logo_of_Twitter.svg.png" alt="Twitter"></a>
             <a href="#" class="nav-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg" alt="Telegram"></a>
-            <a href="#" class="nav-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Medium_logo_Monogram.svg" alt="Medium"></a>
+            <a href="#" class="nav-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Medium_logo_Monogram.svg" alt="Medium" style="filter: invert(100%);"></a>
         </div>
         <hr class="footer-line">
         <div class="footer-text">Odd Pepes</div>
