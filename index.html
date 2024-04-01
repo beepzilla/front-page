@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Odd Pepes</title>
-    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script> <!-- TradingView Widget Library -->
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> <!-- Google Font: Press Start 2P -->
-    <link rel="stylesheet" href="styles.css"> <!-- Link to the external CSS file -->
+    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <nav id="navbar">
@@ -17,10 +17,10 @@
                 <img id="pause-btn" src="https://ipfs.io/ipfs/QmPGj77da8EWd1UBS7FBQwnWHctQVEejHDsHxLdSRLTBzS/360_F_328807197_ZbIU1ugaf36klDytjxL3THxKKhFfWkjw-removebg-preview.png" alt="Pause" style="display: none;">
                 <img id="next-btn" src="https://ipfs.io/ipfs/QmSJayCAtVz794zQfs48FsFT2jh5wAMs1yMHedoXzXAk51/7191571.png" alt="Next">
             </div>
-            <a href="#" class="tab-link" onclick="openTab(event, 'home')">Home</a>
+            <a href="#home" class="tab-link" onclick="openTab(event, 'home')">Home</a>
             <a href="#iframe2" class="nav-link">About</a>
             <a href="#iframe3" class="nav-link">Tokenomics</a>
-            <a href="#" class="tab-link" onclick="openTab(event, 'roadmap')">Roadmap</a>
+            <a href="#iframe4" class="nav-link">Buy Kekel</a>
             <a href="#" class="tab-link" onclick="openTab(event, 'packshack')">PackShack</a>
             <a href="#" class="tab-link" onclick="openTab(event, 'litepaper')">LitePaper (Docs)</a>
         </div>
@@ -42,26 +42,17 @@
         <iframe id="iframe2" src="https://beepzilla.github.io/cards/" title="Iframe 2"></iframe>
         <iframe id="iframe3" src="https://beepzilla.github.io/tokenomics/" title="Iframe 3"></iframe>
         <h2 class="title">Buy $KEKEL</h2>
-        <div class="iframe-container">
-            <iframe id="iframe4" src="https://app.uniswap.org/swap" title="Iframe 4"></iframe>
-            <div class="tradingview-widget-container" id="tradingview_chart"></div>
-        </div>
+        <iframe id="iframe4" src="https://app.uniswap.org/swap" title="Iframe 4"></iframe>
     </div>
-    <div class="tab-content" id="roadmap" style="display: none;">
-        <!-- Placeholder content for the Roadmap tab -->
-        <h2>Roadmap</h2>
-        <iframe src="https://beepzilla.github.io/Roadmap/" style="width: 100%; height: 100vh;"></iframe>
-    </div>
+
     <div class="tab-content" id="packshack" style="display: none;">
-        <!-- Placeholder content for the PackShack tab -->
-        <h2>PackShack</h2>
         <iframe src="https://bafybeidflk2yk6jpj7srln6b75cioyus6walugpz2napm2q2ikrwjxkzli.ipfs.cf-ipfs.com/" style="width: 100%; height: 100vh;"></iframe>
     </div>
+
     <div class="tab-content" id="litepaper" style="display: none;">
-        <!-- Placeholder content for the LitePaper (Docs) tab -->
-        <h2>LitePaper (Docs)</h2>
         <iframe src="https://odd-pepes.gitbook.io/odd-pepes-ecosystem-docs/" style="width: 100%; height: 100vh;"></iframe>
     </div>
+
     <audio id="audio-player" style="display: none;">
         <source id="audio-source" src="https://ipfs.io/ipfs/Qma4cKFvWvfqoKXpB3KCPhFsz2ySje5PSNywTBZff8eXT4/stellar-escape-prigida-main-version-25318-03-02%20(1).mp3" type="audio/mpeg">
     </audio>
@@ -76,6 +67,5 @@
         <hr class="footer-line">
         <div class="footer-text">Odd Pepes</div>
     </footer>
-
 </body>
 </html>
