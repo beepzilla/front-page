@@ -157,6 +157,7 @@ iframe#iframe3 {
     #nav-right {
         margin-top: 10px;
         padding: 0 5px;
+        padding-right: 30px; /* Add this line */
     }
 
     .nav-icon {
