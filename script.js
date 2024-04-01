@@ -87,3 +87,7 @@ nextBtn.addEventListener('click', () => {
     playBtn.style.display = 'none';
     pauseBtn.style.display = 'inline';
 });
+
+audioPlayer.addEventListener('ended', () => {
+    nextBtn.click();
+});
