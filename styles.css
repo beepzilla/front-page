@@ -169,10 +169,13 @@ iframe#iframe3 {
 footer {
     text-align: center;
     margin-top: 50px;
+    width: 100%; /* Ensure the footer takes up the full width */
 }
 
 .social-icons {
     margin-bottom: 10px;
+    justify-content: center; /* Center the social icons */
+    display: flex; /* Use flexbox to align the icons */
 }
 
 .footer-line {
@@ -187,8 +190,11 @@ footer {
     color: #00ff00;
     font-size: 24px;
     text-shadow: 0 0 20px #00ff00;
+    display: block; /* Make the text block-level so it centers properly */
+    margin: 0 auto; /* Center the text horizontally */
 }
 
 .main-content {
     padding-top: 70px; /* Adjust this value based on the height of your navbar */
 }
+
