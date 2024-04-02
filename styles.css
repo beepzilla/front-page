@@ -104,6 +104,10 @@ iframe#iframe3 {
     align-items: center;
 }
 
+#nav-right {
+    padding-right: 30px; /* Add padding to the right */
+}
+
 #logo {
     height: 60px;
     width: 60px;
@@ -152,20 +156,14 @@ iframe#iframe3 {
     .nav-link, .tab-link {
         margin: 5px 0;
     }
-
-    #nav-right {
-        display: flex;
-        align-items: center;
-        padding-right: 30px; /* Add padding to the right */
-    }
     
     .nav-icon img {
         height: 25px; /* Reduce the size of the icons */
         width: 25px; /* Reduce the size of the icons */
         padding: 5px;
     }
-
 }
+
 
 
 footer {
