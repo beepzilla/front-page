@@ -199,7 +199,9 @@ footer {
     text-shadow: 0 0 20px #00ff00;
     display: block;
     margin: 0 auto;
+    text-align: center; /* Center the text */
 }
+
 
 #footer-nav-right {
     text-align: center;
