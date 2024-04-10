@@ -194,6 +194,17 @@ footer {
     margin: 0 auto; /* Center the text horizontally */
 }
 
+#footer-nav-right {
+    text-align: center;
+    padding: 10px 0;
+}
+
+#footer-nav-right .nav-icon {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+
 .main-content {
     padding-top: 70px; /* Adjust this value based on the height of your navbar */
 }
