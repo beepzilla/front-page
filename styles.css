@@ -212,10 +212,10 @@ footer {
     .iframe-container {
         flex-direction: column;
         align-items: center;
+        gap: 20px; /* Add space between iframes */
     }
 
-    .iframe-container iframe,
-    .tradingview-widget-container {
+    .iframe-container iframe {
         flex-basis: 100%;
         max-width: 100%;
     }
