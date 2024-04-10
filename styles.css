@@ -207,21 +207,20 @@ footer {
 @media (max-width: 768px) {
     .chart-iframe {
         height: 100vh; /* Set iframe height to full viewport height */
+        width: 100vw; /* Set iframe width to full viewport width */
+        position: relative; /* Position the iframe relative to its normal position */
+        left: 50%; /* Move the iframe to the right by 50% of its width */
+        right: 50%; /* Move the iframe to the left by 50% of its width */
+        transform: translate(-50%, 0); /* Shift the iframe back to the left by 50% of its width */
     }
 
     .iframe-container {
         flex-direction: column;
         align-items: center;
-        gap: 20px; /* Add space between iframes */
-    }
-
-    .iframe-container iframe {
-        flex-basis: 100%;
-        max-width: 100%;
+        width: 100%; /* Ensure the container takes up the full width */
     }
 
     .main-content {
         padding-top: 150px; /* Adjust top padding to accommodate the mobile menu */
     }
 }
-
