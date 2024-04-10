@@ -206,7 +206,7 @@ footer {
 
 @media (max-width: 768px) {
     .chart-iframe {
-        height: 80vh;
+        height: 100vh; /* Set iframe height to full viewport height */
     }
 
     .iframe-container {
@@ -218,10 +218,10 @@ footer {
     .tradingview-widget-container {
         flex-basis: 100%;
         max-width: 100%;
-        height: 80vh;
     }
 
     .main-content {
-        padding-top: 150px;
+        padding-top: 150px; /* Adjust top padding to accommodate the mobile menu */
     }
 }
+
