@@ -237,14 +237,14 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
     margin-top: 20px;
 }
 
 /* Adjust the iframes inside the trading container */
 .trading-container iframe {
     flex-basis: calc(50% - 10px);
-    max-width: 600px;
+    max-width: 500px;
     height: 700px; /* Adjust the height as needed */
 }
 
