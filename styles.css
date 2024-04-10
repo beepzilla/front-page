@@ -144,9 +144,16 @@ iframe#iframe3 {
 
 @media (max-width: 768px) {
     #navbar {
+        position: static; /* Make the navbar part of the regular page flow */
         flex-direction: column;
         padding: 15px;
     }
+
+    .main-content {
+        padding-top: 0; /* Remove additional padding */
+    }
+}
+
 
     #nav-left {
         flex-direction: column;
