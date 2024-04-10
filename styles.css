@@ -138,7 +138,10 @@ iframe#iframe3 {
 #logo {
     height: 60px;
     width: 60px;
+    border-radius: 50%; /* Add this line */
+    overflow: hidden; /* Optional: to ensure the image is clipped to the circular shape */
 }
+
 
 .nav-link, .tab-link {
     color: #00ff00;
