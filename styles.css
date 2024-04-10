@@ -94,9 +94,17 @@ iframe#iframe3 {
     align-items: center;
     padding: 0 30px;
     background: #150220;
-    position: fixed;
+    position: fixed; /* Keep the navbar fixed on larger screens */
     top: 0;
     z-index: 1;
+}
+
+@media (max-width: 768px) {
+    #navbar {
+        position: static; /* Make the navbar part of the regular page flow on smaller screens */
+        flex-direction: column;
+        padding: 15px;
+    }
 }
 
 #nav-left, #nav-right {
@@ -140,35 +148,6 @@ iframe#iframe3 {
     height: 30px;
     width: 30px;
     cursor: pointer;
-}
-
-@media (max-width: 768px) {
-    #navbar {
-        position: static; /* Make the navbar part of the regular page flow */
-        flex-direction: column;
-        padding: 15px;
-    }
-
-    .main-content {
-        padding-top: 0; /* Remove additional padding */
-    }
-}
-
-
-    #nav-left {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .nav-link, .tab-link {
-        margin: 5px 0;
-    }
-    
-    .nav-icon img {
-        height: 25px;
-        width: 25px;
-        padding: 5px;
-    }
 }
 
 footer {
@@ -226,4 +205,3 @@ footer {
         padding-top: 150px; /* Adjust top padding to accommodate the mobile menu */
     }
 }
-
