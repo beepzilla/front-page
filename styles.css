@@ -209,3 +209,15 @@ footer {
     padding-top: 70px; /* Adjust this value based on the height of your navbar */
 }
 
+/* Default height for iframes */
+.chart-iframe {
+    height: 100vh; /* Full viewport height */
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+    .chart-iframe {
+        height: 80vh; /* Adjust to 80% of the viewport height */
+    }
+}
+
