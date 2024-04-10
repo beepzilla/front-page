@@ -211,7 +211,7 @@ footer {
 
 /* Default height for iframes */
 .chart-iframe {
-    height: 100vh; /* Full viewport height */
+    height: 300vh; /* Full viewport height */
 }
 
 /* Adjustments for smaller screens */
