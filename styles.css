@@ -210,18 +210,25 @@ footer {
     height: 300vh;
 }
 
+
 @media (max-width: 768px) {
     .iframe-container {
         display: block; /* Use block display for the container */
+        width: 100%; /* Set container width to full available width */
+        margin-bottom: 20px; /* Add some space between the iframes */
     }
-
     .chart-iframe {
         height: 100vh; /* Set iframe height to full viewport height */
         width: 100%; /* Set iframe width to full container width */
         margin-bottom: 20px; /* Add some space between the iframes */
+    }
+    iframe {
+        width: 100%; /* Set iframe width to full container width */
+        height: auto; /* Set iframe height to auto */
     }
 
     .main-content {
         padding-top: 150px; /* Adjust top padding to accommodate the mobile menu */
     }
 }
+
