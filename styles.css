@@ -245,7 +245,7 @@ footer {
 .trading-container iframe {
     flex-basis: calc(50% - 10px);
     max-width: 600px;
-    height: 1200px; /* Adjust the height as needed */
+    height: 700px; /* Adjust the height as needed */
 }
 
 /* Mobile adjustments */
